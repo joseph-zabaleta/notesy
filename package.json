@@ -1,15 +1,26 @@
 {
-  "name": "dsa",
+  "name": "week-01-notesy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Note taking Application",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "jest --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joseph-zabaleta/notesy.git"
+  },
+  "author": "joseph-zabaleta",
   "license": "ISC",
   "dependencies": {
     "jest": "^24.5.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/joseph-zabaleta/notesy/issues"
+  },
+  "homepage": "https://github.com/joseph-zabaleta/notesy#readme"
 }
