@@ -1,29 +1,35 @@
 'use strict';
 
+// const jest = require('jest');
 const Note = require('../lib/note');
 
+
 // Set spys on console objects
-const spyLog = jest.spyOn(console, 'log');
-const spyError = jest.spyOn(console, 'error');
+let spyLog = jest.spyOn(console, 'log');
 
 beforeEach( () => {
     spyLog.mockReset();
-    spyError.mockReset();
 });
-
-// afterEach( () => {
-//     expect(spyLog).not.toHaveBeenCalled();
-//     expect(spyError).not.toHaveBeenCalled();
-// });
 
 describe('Testing Note Class Functionality: ', () => {
 
-    it('Demo Test', () => {
-        expect(1).toStrictEqual(1);
+
+    it('Should create a new instance of the Note Class', () => {
+
+        let mockInput = {
+            action: '',
+            payload: 'Message to save',
+            secondAction: null,
+            category: 'General',
+        };
+
+        new Note(mockInput);
+
+        expect(spyLog).toHaveBeenCalled();
     });
 
-    it('Should return a valid Note Object', () => {
 
+    it('Should confirm the executing of "Add" ', () => {
         let mockInput = {
             action: 'add',
             payload: 'Message to save',
@@ -33,10 +39,35 @@ describe('Testing Note Class Functionality: ', () => {
 
         new Note(mockInput);
 
-
-        expect(console.log).toHaveBeenCalled();
+        expect(spyLog).toHaveBeenCalledWith('Adding this note to the database(Soon...)')
     });
 
-    console.log(spyLog.getMockImplementation());
+
+    it('Should confirm the executing of "List" ', () => {
+        let mockInput = {
+            action: 'list',
+            payload: 'General',
+            secondAction: null,
+            category: 'General',
+        };
+
+        new Note(mockInput);
+
+        expect(spyLog).toHaveBeenCalledWith('Retrieving list of notes from category: General')
+    });
+
+
+    it('Should confirm the executing of "Delete" ', () => {
+        let mockInput = {
+            action: 'delete',
+            payload: 'Message to save',
+            secondAction: null,
+            category: 'General',
+        };
+
+        new Note(mockInput);
+
+        expect(spyLog).toHaveBeenCalledWith('Deleting note with the ID: Message to save')
+    });
 
 });
