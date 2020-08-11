@@ -1,9 +1,5 @@
 # Class 01-04: Notesy - Node Ecosystem
 
-### Open Git Pull Requests
-
----
-
 ## Overview
 Notesy is a multi-day build of a command-line (Terminal Based) note taking application.
 
