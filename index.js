@@ -5,8 +5,9 @@ const Note = require('./lib/notes.js');
 
 let userInput = new Input();
 
-if (!userInput.help) {
-    new Note(userInput);
-}
+// console.log('input index: ', userInput)
+
+new Note(userInput);
+
 
 

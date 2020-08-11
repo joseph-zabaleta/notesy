@@ -61,7 +61,7 @@ Our notes application will accept and validate the user’s input, and confirm t
 
 #### Technical Requirements / Notes:
 
-- [] Refactor your previous work by re-implementing both the `Input` and `Notes` library modules as proper ES6 Classes
+- [x] Refactor your previous work by re-implementing both the `Input` and `Notes` library modules as proper ES6 Classes
 - [] Using the jest framework, write tests to assert that your application is working correctly.
     - [] As noted in the Application Requirements document, tests must be in the `__tests__` folder
     - [] Make sure that your package.json file is setup with a test script
