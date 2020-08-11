@@ -19,7 +19,8 @@
   "author": "joseph-zabaleta",
   "license": "ISC",
   "dependencies": {
-    "jest": "^24.5.0",
+    "jest": "^26.3.0",
+    "jsdoc": "^3.6.5",
     "minimist": "^1.2.5"
   },
   "bugs": {
