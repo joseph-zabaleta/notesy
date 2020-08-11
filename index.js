@@ -7,3 +7,5 @@ let userInput = new Input();
 
 let note = new Note(userInput);
 
+// console.log(userInput);
+
