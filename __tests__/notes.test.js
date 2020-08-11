@@ -69,33 +69,3 @@ describe('Testing Note Class Functionality: ', () => {
     });
 
 });
-
-
-// jest.mock('minimist');
-// const minimist = require('minimist');
-
-// minimist.mockImplementation(() => {
-//     return {
-//         _: [],
-//         add: 'This is a note',
-//     };
-// });
-
-// const Input = require('../lib/input.js');
-// const Note = require('../lib/note.js');
-
-// let spyLog = jest.spyOn(console, 'log');
-
-// beforeEach( () => {
-//     spyLog.mockReset();
-// });
-
-// describe('Testing the Note Class Module: ', () => {
-
-//     it('Should ', () => {
-//         let mockInput = new Input();
-//         let obj = mockInput.parse({_:[], a: 'New note'})
-
-//         expect(spyLog).toHaveBeenCalledWith('Adding')
-//     });
-// });

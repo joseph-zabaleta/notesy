@@ -16,9 +16,10 @@ describe('Testing the Input Class Module:', () => {
 
     it('Should be able to parse user input and create an object', () => {
         let mockInput = new Input();
-        let obj = mockInput.parse({_: [], add: 'test' });
-        expect(obj.action).toBe('add');
-        expect(obj.payload).toBe('test');
+        expect(mockInput.payload).toBe('This is a note');
+        // let obj = mockInput.parse({_: [], add: 'test' });
+        // expect(obj.action).toBe('add');
+        // expect(obj.payload).toBe('test');
     });
 
     it('Should pass validation if all properties are acceptable', () => {
