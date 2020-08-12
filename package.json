@@ -20,8 +20,8 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^26.3.0",
-    "jsdoc": "^3.6.5",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "mongoose": "^5.9.28"
   },
   "bugs": {
     "url": "https://github.com/joseph-zabaleta/notesy/issues"
