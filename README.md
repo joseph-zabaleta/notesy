@@ -56,32 +56,29 @@ For the first phase, our notes application will accept and validate the user’s
 From a business/user perspective, the requirements remain unchanged from the previous lab:
 
 Our notes application will accept and validate the user’s input, and confirm that the note was valid.
-- [] As a user, I want to be able to call the application using command line standard syntax, indicating the text of a note I wish to add so that the system will eventually be able to save this note.
-- [] As a user, I expect that the application will confirm my intent.
+- [x] As a user, I want to be able to call the application using command line standard syntax, indicating the text of a note I wish to add so that the system will eventually be able to save this note.
+- [x] As a user, I expect that the application will confirm my intent.
 
 #### Technical Requirements / Notes:
 
 - [x] Refactor your previous work by re-implementing both the `Input` and `Notes` library modules as proper ES6 Classes
-- [] Using the jest framework, write tests to assert that your application is working correctly.
-    - [] As noted in the Application Requirements document, tests must be in the `__tests__` folder
-    - [] Make sure that your package.json file is setup with a test script
-        - You will need this to be able to run `npm test` on your machine
-        - GitHub Actions will also use that command to run your tests in the cloud
-    - [] For the `input` module tests, you will need to assert the following:
+- [x] Using the jest framework, write tests to assert that your application is working correctly.
+    - [x] As noted in the Application Requirements document, tests must be in the `__tests__` folder
+    - [x] Make sure that your package.json file is setup with a test script
+    - [x] For the `input` module tests, you will need to assert the following:
         - Given a good input:
-            - [] The Class’ `valid()` method returns true
-            - [] The input module creates a new instance with both action and payload properties
+            - [x] The Class’ `valid()` method returns true
+            - [x] The input module creates a new instance with both action and payload properties
         - Given invalid input:
-            - [] The Class’ `valid()` method returns false
-    - [] For the `notes` module tests, you will need to assert the following:
-        - [] Nothing is logged to the console if there was no command given
-        - [] If the command (add) and data (the note) were both valid, assert that the console shows the output.
+            - [x] The Class’ `valid()` method returns false
+    - [x] For the `notes` module tests, you will need to assert the following:
+        - [x] Nothing is logged to the console if there was no command given
+        - [x] If the command (add) and data (the note) were both valid, assert that the console shows the output.
 
 ## User Acceptance Tests
 To run tests associated with this application do the following:
 - From the root run `npm test`
 - This will execute all tests, all tests are stored in `__tests__` directory.
-
 ---
 
 ## Authors
