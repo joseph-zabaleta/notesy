@@ -3,7 +3,7 @@
 ## Overview
 Notesy is a multi-day build of a command-line (Terminal Based) note taking application.
 
-Current Phase: Phase 3
+Current Phase: Phase 4
 Total Phases: 4
 
 ---
@@ -11,8 +11,12 @@ Total Phases: 4
 ## Implementation Notes:
 1. Clone repo
 2. Npm install
-3. node index.js [some flag]
-    - `-a` or `-add`
+3. node index.js --`some flag`
+    - To add a note: -a or --add [`message`],
+    - To delete a note: -d or --delete [`id`],
+    - To list all notes: -l or --list,
+    - To list by category: -l or --list [`category name`]
+
 ---
 
 ## Feature Tasks and Requirements
@@ -106,6 +110,23 @@ We will be extending the functionality of the notes application by adding a pers
     - [x] Bring in `mongoose` as a library.
     - [x] Create a new method for each of the allowed commands.
 
+### Phase 4 Requirements:
+- [x] Users will be able to create and save notes to a database, organize them into categories, view, and delete them.
+
+#### Technicial Requirements / Notes
+- [x] Create a notes “collection” through which you will perform CRUD operations with your notes mongoose schema.
+- [x] model/notes-collection.js
+    - [x] Requires the notes-schema.js module
+    Implement the following collection interface methods for CRUD operations
+    - [x] get()
+    - [x] create()
+    - update() (stretch goal)
+    - [x] delete()
+    - [x] Each method should invoke the proper mongoose method via your schema
+    - [x] Write a suite of tests, using TDD to get the tests and your model working in sync.
+    - [x] Use @code-fellows/supergoose
+- [x] Refactor your lib/notes.js module to save, list, delete notes using the collection interface rather than the schema/mongoose methods directly
+
 ## User Acceptance Tests
 To run tests associated with this application do the following:
 - From the root run `npm test`
@@ -129,4 +150,5 @@ This project is under the MIT License.
 ---
 
 ## Acknowledgements / Resources
-- none
+- [Mongoose Docs](https://mongoosejs.com/)
+- [Jest Docs](https://jestjs.io/docs/en/getting-started)
