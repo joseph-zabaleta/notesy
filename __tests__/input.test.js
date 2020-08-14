@@ -3,6 +3,13 @@
 jest.mock('minimist');
 const minimist = require('minimist');
 
+// Set spys on console objects
+let spyLog = jest.spyOn(console, 'log');
+beforeEach( () => {
+    spyLog.mockReset();
+});
+
+
 minimist.mockImplementation(() => {
     return {
         _: [],
@@ -17,9 +24,6 @@ describe('Testing the Input Class Module:', () => {
     it('Should be able to parse user input and create an object', () => {
         let mockInput = new Input();
         expect(mockInput.payload).toBe('This is a note');
-        // let obj = mockInput.parse({_: [], add: 'test' });
-        // expect(obj.action).toBe('add');
-        // expect(obj.payload).toBe('test');
     });
 
     it('Should pass validation if all properties are acceptable', () => {

@@ -1,33 +1,23 @@
 'use strict';
 
 const Note = require('../lib/note.js');
+const NoteService = require('../lib/model/notes-service.js');
+
+jest.mock('../lib/model/notes-service.js');
+
 
 // Set spys on console objects
 let spyLog = jest.spyOn(console, 'log');
-
 beforeEach( () => {
     spyLog.mockReset();
 });
 
+
 describe('Testing Note Class Functionality: ', () => {
 
 
-    it('Should create a new instance of the Note Class', () => {
+    it('Should execute the add service function', async () => {
 
-        let mockInput = {
-            action: '',
-            payload: 'Message to save',
-            secondAction: null,
-            category: 'General',
-        };
-
-        new Note(mockInput);
-
-        expect(spyLog).toHaveBeenCalled();
-    });
-
-
-    it('Should confirm the executing of "Add" ', () => {
         let mockInput = {
             action: 'add',
             payload: 'Message to save',
@@ -35,13 +25,15 @@ describe('Testing Note Class Functionality: ', () => {
             category: 'General',
         };
 
-        new Note(mockInput);
+        let actual = new Note(mockInput);
+        let pizza = NoteService.mock.instances[0];
 
-        expect(spyLog).toHaveBeenCalledWith('Adding this note to the database(Soon...)')
+        expect(pizza.add).toHaveBeenCalledTimes(1);
+        expect(actual.method).toEqual('post');
     });
 
 
-    it('Should confirm the executing of "List" ', () => {
+    it('Should execute the list service function', () => {
         let mockInput = {
             action: 'list',
             payload: 'General',
@@ -49,13 +41,15 @@ describe('Testing Note Class Functionality: ', () => {
             category: 'General',
         };
 
-        new Note(mockInput);
+        let actual = new Note(mockInput);
+        let pizza = NoteService.mock.instances[0];
 
-        expect(spyLog).toHaveBeenCalledWith('Retrieving list of notes from category: General')
+        expect(pizza.list).toHaveBeenCalledTimes(1);
+        expect(actual.method).toEqual('list');
     });
 
 
-    it('Should confirm the executing of "Delete" ', () => {
+    it('Should execute the delete service function', () => {
         let mockInput = {
             action: 'delete',
             payload: 'Message to save',
@@ -63,9 +57,11 @@ describe('Testing Note Class Functionality: ', () => {
             category: 'General',
         };
 
-        new Note(mockInput);
+        let actual = new Note(mockInput);
+        let pizza = NoteService.mock.instances[0];
 
-        expect(spyLog).toHaveBeenCalledWith('Deleting note with the ID: Message to save')
+        expect(pizza.delete).toHaveBeenCalledTimes(1);
+        expect(actual.method).toEqual('delete');
     });
 
 });

@@ -3,6 +3,9 @@
 ## Overview
 Notesy is a multi-day build of a command-line (Terminal Based) note taking application.
 
+Current Phase: Phase 3
+Total Phases: 4
+
 ---
 
 ## Implementation Notes:
@@ -74,6 +77,34 @@ Our notes application will accept and validate the user’s input, and confirm t
     - [x] For the `notes` module tests, you will need to assert the following:
         - [x] Nothing is logged to the console if there was no command given
         - [x] If the command (add) and data (the note) were both valid, assert that the console shows the output.
+
+### Phase 3 Requirements:
+We will be extending the functionality of the notes application by adding a persistence layer to allow users to save notes to a database, organize them into categories, view, and delete them.
+
+- [x] As a user, I want my notes to be saved in a database so that I can retrieve them later.
+- [x] As a user, I want to categorize my notes so that I can more easily find them.
+- [x] As a user, I want to be able to see a list of my notes so that I can manage them.
+- [x] As a user, I want to be able to delete a note
+
+- [x] When a user adds a new note, save it to the database
+    - [x] The application should display a confirmation message.
+
+- [x] Users should be able to list notes from the database.
+    - [x] All notes. `node notes.js --list`
+    - [x] Notes in a category. `node notes.js --list General`
+
+- [x] Users should be able to delete a single note.
+    - [x] Send the --delete arugment, with the id of the note to delete.
+
+#### Techinical Requirements / Notes
+- [x] Create a mongoose schema called notes
+    - [x] The `notes` shema should have 2 properties
+        - text (string, required)
+        - category (string, required)
+
+- [x] Add "CRUD" functionality to the `notes.js` class
+    - [x] Bring in `mongoose` as a library.
+    - [x] Create a new method for each of the allowed commands.
 
 ## User Acceptance Tests
 To run tests associated with this application do the following:
